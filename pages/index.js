@@ -20,7 +20,12 @@ export default function Home() {
       'fuerte9.jpg',
       'fuerte10.jpg',
       'fuerte11.jpg',
-      'fuerte12.jpg'
+      'fuerte12.jpg',
+      'fuerte13.jpg',
+      'fuerte14.jpg',
+      'fuerte15.jpg',
+      'fuerte16.jpg',
+      'fuerte17.jpg'
     ];
 
     if (!isBackgroundSet) {
