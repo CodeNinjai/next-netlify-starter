@@ -24,3 +24,15 @@ body {
   text-shadow: 4px 3px 0px #7A7A7A;
   font-size: 48px;
 }
+
+@media only screen and (min-width: 390px) and (max-width: 767px) { 
+  .main {
+    color: white;
+    font-family: sans-serif;
+    font-size: 36px;
+    padding: 20px;
+    text-shadow: 4px 3px 0px #7A7A7A;
+    font-size: 36px;
+  }
+
+ }
