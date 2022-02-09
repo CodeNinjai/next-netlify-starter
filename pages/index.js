@@ -31,6 +31,21 @@ export default function Home() {
     }
   });
 
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+  const [temp, setTemp] = useState(0)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=28.0568188&lon=-14.3207891')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+        setTemp(data.properties.timeseries[0].data.instant.details.air_temperature);
+      })
+  }, [])
+
 
   const [duration, setDuration] = useState();
 
@@ -42,7 +57,9 @@ export default function Home() {
 
 
   return (
-    <div className="container">
+    <div className="container" style={{
+      display: !isLoading?"flex":"none"
+    }}>
       <Head>
         <title>Fuerteventura</title>
         <link rel="icon" href="/favicon.ico" />
@@ -58,6 +75,9 @@ export default function Home() {
         <Header title="Fuerteventura" />
         <p>
           {duration} bis zum Abflug
+        </p>
+        <p>   
+          Aktuelle Temperatur: {temp} °C
         </p>
       </main>
     </div>
