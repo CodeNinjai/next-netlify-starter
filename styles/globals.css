@@ -23,6 +23,7 @@ body {
   padding: 20px;
   text-shadow: 4px 3px 0px #7A7A7A;
   font-size: 48px;
+  text-align: center;
 }
 
 @media only screen and (max-width: 767px) { 
