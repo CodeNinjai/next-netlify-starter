@@ -27,14 +27,102 @@ body {
   text-align: center;
 }
 
+.bar-container {
+  padding: 25px 30px;
+  width: 700px;
+  text-align: left;
+}
+
+.bar-container .bar{
+  margin: 5px 0;
+}
+
+.bar-container .bar .progress-line {
+  height: 15px;
+  width: 100%;
+  background: #f0f0f0;
+  opacity: 0.8;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+
+.bar-container .bar .progress-line span {
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #797979;
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+/*  width: 80%; */
+}
+
+.progress-line span::after{
+  position: absolute;
+  top: -37px;
+  right: -45px;
+  color: #fff;
+  padding: 1px 8px;
+
+  opacity: 0;
+  animation: showText2 0.0s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100%{
+    opacity: 1;
+  }
+}
+
+.progress-line span::after{
+  content: "";
+  display:block;
+  height:64px;
+  width:64px;
+  background-size: 64px 64px;
+  background-image: url(/icons8-huneymoon.svg);
+  background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 767px) { 
   .main {
     color: white;
     font-family: sans-serif;
     font-size: 36px;
     padding: 20px;
-    text-shadow: 4px 3px 0px #7A7A7A;
+    text-shadow: 2px 2px 0px #7A7A7A;
     font-size: 24px;
+  }
+
+  .bar-container {
+    padding: 5px 8px;
+    width: 350px;
+    text-align: left;
+  }
+  .progress-line span::after{
+    position: absolute;
+    top: -28px;
+    right: -39px;
+    color: #fff;
+    padding: 1px 8px;
+    opacity: 0;
+    animation: showText2 0.0s 1.5s linear forwards;
+  }
+  .progress-line span::after{
+    content: "";
+    display:block;
+    height:48px;
+    width:48px;
+    background-size: 48px 48px;
+    background-image: url(/icons8-huneymoon.svg);
+    background-repeat: no-repeat;
   }
 
  }

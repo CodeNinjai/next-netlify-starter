@@ -7,6 +7,13 @@ let isBackgroundSet = false;
 
 export default function Home() {
 
+  var start1 = moment("2022-01-04", "YYYY-MM-DD");
+  var start2 = moment();
+  var end = moment("2022-03-17", "YYYY-MM-DD");
+  var x = moment.duration(end.diff(start1)).asDays();
+  var y = moment.duration(end.diff(start2)).asDays();
+  var progress = (Math.round(y/x * 100)) + '%';
+
   useEffect(() => {
     let frame_set = [
       'fuerte1.jpg',
@@ -32,6 +39,8 @@ export default function Home() {
       let frame_color = Math.floor((Math.random() * (frame_set).length));
       let url_p = "url(\"" + frame_set[frame_color] + "\")";
       document.body.style.backgroundImage = url_p;
+      var x = document.getElementById('xxx');
+      x.style.width = progress;
       isBackgroundSet = true;
     }
   });
@@ -84,6 +93,11 @@ export default function Home() {
         <p>   
           Aktuelle Temperatur: {temp} °C
         </p>
+        <div className="bar-container">
+          <div className="bar">
+            <div className="progress-line"><span id="xxx"></span></div>
+          </div>
+        </div>
       </main>
     </div>
   )
