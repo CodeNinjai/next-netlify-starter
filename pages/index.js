@@ -12,7 +12,7 @@ export default function Home() {
   var end = moment("2022-03-17", "YYYY-MM-DD");
   var x = moment.duration(end.diff(start1)).asDays();
   var y = moment.duration(end.diff(start2)).asDays();
-  var progress = (Math.round(y/x * 100)) + '%';
+  var progress = (100-(Math.round(y/x * 100))) + '%';
 
   useEffect(() => {
     let frame_set = [
