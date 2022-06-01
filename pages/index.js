@@ -7,9 +7,9 @@ let isBackgroundSet = false;
 
 export default function Home() {
 
-  var start1 = moment("2022-01-04", "YYYY-MM-DD");
+  var start1 = moment("2022-06-01", "YYYY-MM-DD");
   var start2 = moment();
-  var end = moment("2022-03-17", "YYYY-MM-DD");
+  var end = moment("2022-10-18", "YYYY-MM-DD");
   var x = moment.duration(end.diff(start1)).asDays();
   var y = moment.duration(end.diff(start2)).asDays();
   var progress = (100-(Math.round(y/x * 100))) + '%';
@@ -65,7 +65,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDuration(durationAsString('2022-03-17 11:25:00'));
+      setDuration(durationAsString('2022-10-18 11:25:00'));
     }, 1000);
   });
 
@@ -84,7 +84,7 @@ export default function Home() {
           Bald geht es los!
         </p>
         <p>
-          17.03.22 - 24.03.22
+          18.10.22 - 25.10.22
         </p>
         <Header title="Fuerteventura" />
         <p>
