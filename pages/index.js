@@ -7,32 +7,38 @@ let isBackgroundSet = false;
 
 export default function Home() {
 
-  var start1 = moment("2022-11-07", "YYYY-MM-DD");
+  var start1 = moment("2022-12-09", "YYYY-MM-DD");
   var start2 = moment();
-  var end = moment("2023-04-16", "YYYY-MM-DD");
+  var end = moment("2023-02-28", "YYYY-MM-DD");
   var x = moment.duration(end.diff(start1)).asDays();
   var y = moment.duration(end.diff(start2)).asDays();
   var progress = (100-(Math.round(y/x * 100))) + '%';
 
   useEffect(() => {
     let frame_set = [
-      'fuerte1.jpg',
-      'fuerte2.jpg',
-      'fuerte3.jpg',
-      'fuerte4.jpg',
-      'fuerte5.jpg',
-      'fuerte6.jpg',
-      'fuerte7.jpg',
-      'fuerte8.jpg',
-      'fuerte9.jpg',
-      'fuerte10.jpg',
-      'fuerte11.jpg',
-      'fuerte12.jpg',
-      'fuerte13.jpg',
-      'fuerte14.jpg',
-      'fuerte15.jpg',
-      'fuerte16.jpg',
-      'fuerte17.jpg'
+      'lapalma1.jpg',
+      'lapalma2.jpg',
+      'lapalma3.jpg',
+      'lapalma4.jpg',
+      'lapalma5.jpg',
+      'lapalma6.jpg',
+      'lapalma7.jpg',
+      'lapalma8.jpg',
+      'lapalma9.jpg',
+      'lapalma10.jpg',
+      'lapalma11.jpg',
+      'lapalma12.jpg',
+      'lapalma13.jpg',
+      'lapalma14.jpg',
+      'lapalma15.jpg',
+      'lapalma16.jpg',
+      'lapalma17.jpg',
+      'lapalma18.jpg',
+      'lapalma19.jpg',
+      'lapalma20.jpg',
+      'lapalma21.jpg',
+      'lapalma22.jpg',
+      'lapalma23.jpg'
     ];
 
     if (!isBackgroundSet) {
@@ -51,7 +57,8 @@ export default function Home() {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=28.0568188&lon=-14.3207891')
+    // 28.6870601,-17.7902822
+    fetch('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=28.6870601&lon=-17.7902822')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -65,7 +72,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDuration(durationAsString('2023-04-16 09:00:00'));
+      setDuration(durationAsString('2023-03-07 09:00:00'));
     }, 1000);
   });
 
@@ -75,7 +82,7 @@ export default function Home() {
       display: !isLoading?"flex":"none"
     }}>
       <Head>
-        <title>Fuerteventura</title>
+        <title>La Palma</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -84,9 +91,9 @@ export default function Home() {
           Bald geht es los!
         </p>
         <p>
-          16.04.23 - 25.04.23
+          28.02.23 - 07.03.23
         </p>
-        <Header title="Fuerteventura" />
+        <Header title="La Palma" />
         <p>
           {duration} bis zum Abflug
         </p>
