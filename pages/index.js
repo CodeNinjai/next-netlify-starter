@@ -72,7 +72,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDuration(durationAsString('2023-03-07 09:00:00'));
+      setDuration(durationAsString('2023-02-28 09:00:00'));
     }, 1000);
   });
 
