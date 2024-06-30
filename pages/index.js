@@ -12,7 +12,13 @@ export default function Home() {
   var end = moment("2024-04-11", "YYYY-MM-DD");
   var x = moment.duration(end.diff(start1)).asDays();
   var y = moment.duration(end.diff(start2)).asDays();
-  var progress = (100-(Math.round(y/x * 100))) + '%';
+  let percentage = 100-(Math.round(y/x * 100));
+  if (percentage < 0) {
+    percentage = 0;
+  } else if (percentage > 100) {
+    percentage = 100;
+  }
+  var progress = `${percentage}%`;
 
   useEffect(() => {
     let frame_set = [
