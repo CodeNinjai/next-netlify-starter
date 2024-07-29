@@ -7,9 +7,9 @@ let isBackgroundSet = false;
 
 export default function Home() {
 
-  var start1 = moment("2023-12-03", "YYYY-MM-DD");
+  var start1 = moment("2024-06-26", "YYYY-MM-DD");
   var start2 = moment();
-  var end = moment("2024-04-11", "YYYY-MM-DD");
+  var end = moment("2024-11-18", "YYYY-MM-DD");
   var x = moment.duration(end.diff(start1)).asDays();
   var y = moment.duration(end.diff(start2)).asDays();
   let percentage = 100-(Math.round(y/x * 100));
@@ -71,7 +71,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDuration(durationAsString('2024-04-11 06:30:00'));
+      setDuration(durationAsString('2024-11-18 06:30:00'));
     }, 1000);
   });
 
@@ -90,7 +90,7 @@ export default function Home() {
           Bald geht es los!
         </p>
         <p>
-          11.04.24 - 21.04.24
+          18.11.24 - 28.11.24
         </p>
         <Header title="Fuerteventura" />
         <p>
